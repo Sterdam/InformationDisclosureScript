@@ -16,14 +16,14 @@ Download JavaScript Files:
 
 Download the JavaScript files using wget with the following command:
 
-    wget -P jsfiles -i jsLink.txt
+    wget -P jsfiles -i jsLink.txt --user-agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/91.0.4472.124 Safari/537.36"
 
 Tip: Use appropriate headers with wget to maximize the chances of downloading all files successfully.
 
 Run the Disclosure Check:
 
 Execute the script to check for dangerous disclosures:
-
+    
   python3 checkDangerousDisclosure.py >> result.txt
   
 Find and Sort Keywords:
