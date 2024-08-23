@@ -1,5 +1,36 @@
-# InformationDisclosureScript
-All about automated information disclosure research
+Information Disclosure Script
+Automated information disclosure research tool.
 
+Usage Instructions
+Start Burp Suite:
 
-To use this script you need to start burp with proxy, then dive in the whole target victim, filter  js file  and paste it all in a file named jsLink.txt. then python3 checkDangerousDisclosure.py >> result.txt, then python3 findSortedKeywordValue.py, then you need to check manually to see if you found token api key etc...
+Begin by starting Burp Suite with the proxy enabled.
+Scan the Target:
+
+Thoroughly explore the target application using Burp Suite.
+Filter the captured traffic to find all JavaScript (.js) files.
+Extract JavaScript URLs:
+
+Collect all the URLs of the JavaScript files and save them into a file named jsLink.txt.
+Download JavaScript Files:
+
+Download the JavaScript files using wget with the following command:
+
+    wget -P jsfiles -i jsLink.txt
+
+Tip: Use appropriate headers with wget to maximize the chances of downloading all files successfully.
+
+Run the Disclosure Check:
+
+Execute the script to check for dangerous disclosures:
+
+  python3 checkDangerousDisclosure.py >> result.txt
+  
+Find and Sort Keywords:
+
+Run the script to find and sort keyword values:
+  python3 findSortedKeywordValue.py
+
+Manual Review:
+
+Manually review the results to identify any sensitive information such as tokens, API keys, etc.
